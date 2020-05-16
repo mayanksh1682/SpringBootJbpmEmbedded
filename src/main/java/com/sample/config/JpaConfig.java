@@ -54,7 +54,7 @@ public class JpaConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPersistenceXmlLocation("classpath*:jbpm-persistence-JPA2.xml");
+		em.setPersistenceXmlLocation("classpath*:META-INF/jbpm-persistence-JPA2.xml");
 
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
