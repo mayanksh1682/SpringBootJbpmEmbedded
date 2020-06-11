@@ -71,7 +71,7 @@
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
       <property name="hibernate.max_fetch_depth" value="100" />
-      <property name="hibernate.hbm2ddl.auto" value="update" />
+      <property name="hibernate.hbm2ddl.auto" value="create" />
       <property name="hibernate.default_schema" value="WF" />
       <property name="hibernate.show_sql" value="true" />
       <property name="hibernate.connection.autocommit" value="true" />

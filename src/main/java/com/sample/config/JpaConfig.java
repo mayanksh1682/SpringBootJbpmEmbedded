@@ -54,20 +54,20 @@ public class JpaConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPersistenceXmlLocation("classpath*:META-INF/jbpm-persistence-JPA2.xml");
-
+		em.setPersistenceXmlLocation("classpath*:META-INF/jbpm-persistence-JPA2.xml");		
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
-		//em.setJpaProperties(additionalProperties());
+		em.setJpaProperties(additionalProperties());
 
 		return em;
 	}
 
 	Properties additionalProperties() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		properties.setProperty("hibernate.hbm2ddl.auto", "create");		
+		properties.setProperty("hibernate.show_sql", "true");	
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
-		properties.setProperty("hibernate.show_sql", "true");
+		properties.setProperty("hibernate.default_schema", "WF");
 		return properties;
 	}
 
